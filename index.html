@@ -53,12 +53,15 @@ h1,h2,h3{font-family:"Montserrat",system-ui,sans-serif;font-weight:700;letter-sp
 .nav{position:fixed;top:0;left:0;right:0;z-index:50;color:#fff;transition:.4s var(--ease)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;min-height:134px;border-bottom:1px solid rgba(255,255,255,.18);transition:.4s var(--ease)}
 .nav.solid{background:rgba(255,255,255,.92);backdrop-filter:blur(14px);color:var(--ink);box-shadow:0 1px 0 var(--line)}
-.nav.solid .nav-inner{min-height:110px;border-bottom-color:transparent}
+.nav.solid .nav-inner{min-height:106px;border-bottom-color:transparent}
 .nav.solid .logo{filter:none}
 .nav.solid .lang button{border-color:var(--line);color:var(--ink)}
 .nav.solid .lang button.active{background:var(--brand);color:#fff;border-color:var(--brand)}
-.brand{display:flex;align-items:center;gap:12px}
-.logo{width:108px;height:108px;object-fit:contain;filter:brightness(0) invert(1);transition:filter .4s var(--ease)}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{width:108px;height:108px;object-fit:contain;filter:brightness(0) invert(1);transition:filter .4s var(--ease),width .4s var(--ease),height .4s var(--ease)}
+.wordmark{height:40px;width:auto;object-fit:contain;filter:brightness(0) invert(1);transition:filter .4s var(--ease),height .4s var(--ease)}
+.nav.solid .logo{width:84px;height:84px}
+.nav.solid .wordmark{height:32px;filter:none}
 .nav-links{display:flex;gap:30px;align-items:center;font-size:.88rem;font-weight:500}
 .nav-links>a{position:relative;opacity:.86;padding:4px 0}
 .nav-links>a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--sky);transition:.4s var(--ease)}
@@ -271,9 +274,12 @@ footer p{font-size:.76rem;color:rgba(255,255,255,.5);max-width:62ch;margin:18px 
 }
 @media(max-width:560px){
   .shell{width:min(100% - 30px,1200px)}
-  .nav-inner{min-height:112px}
-  .nav.solid .nav-inner{min-height:96px}
-  .logo{width:92px;height:92px}
+  .nav-inner{min-height:104px}
+  .nav.solid .nav-inner{min-height:92px}
+  .logo{width:84px;height:84px}
+  .wordmark{height:30px}
+  .lang-code{display:none}
+  .brand{gap:10px}
   .wa-float{width:56px;height:56px;right:16px;bottom:16px}
   .wa-float svg{width:29px;height:29px}
   .wa-float .wa-tip{display:none}
@@ -303,6 +309,7 @@ footer p{font-size:.76rem;color:rgba(255,255,255,.5);max-width:62ch;margin:18px 
     <div class="shell nav-inner">
       <a class="brand" href="#home">
         <img class="logo" src="assets/logo-mark.png" alt="Alliance Immigration Law">
+        <img class="wordmark" src="assets/logo-word.png" alt="">
       </a>
       <div class="nav-links">
         <a href="#services" data-i18n="nav1">Services</a>
@@ -310,24 +317,24 @@ footer p{font-size:.76rem;color:rgba(255,255,255,.5);max-width:62ch;margin:18px 
         <a href="#process" data-i18n="nav3">Process</a>
         <a href="#contact" data-i18n="nav4">Contact</a>
         <div class="lang" id="lang" aria-label="Language selector">
-          <button data-lang="en" class="active">
+          <button data-lang="en" class="active" aria-label="English">
             <svg class="flag" viewBox="0 0 24 16" aria-hidden="true">
               <rect width="24" height="16" fill="#fff"/>
               <g fill="#b22234"><rect width="24" height="1.23"/><rect y="2.46" width="24" height="1.23"/><rect y="4.92" width="24" height="1.23"/><rect y="7.38" width="24" height="1.23"/><rect y="9.85" width="24" height="1.23"/><rect y="12.31" width="24" height="1.23"/><rect y="14.77" width="24" height="1.23"/></g>
               <rect width="9.6" height="8.62" fill="#3c3b6e"/>
               <g fill="#fff"><circle cx="1.6" cy="1.4" r=".42"/><circle cx="4.8" cy="1.4" r=".42"/><circle cx="8" cy="1.4" r=".42"/><circle cx="3.2" cy="3.3" r=".42"/><circle cx="6.4" cy="3.3" r=".42"/><circle cx="1.6" cy="5.2" r=".42"/><circle cx="4.8" cy="5.2" r=".42"/><circle cx="8" cy="5.2" r=".42"/><circle cx="3.2" cy="7.1" r=".42"/><circle cx="6.4" cy="7.1" r=".42"/></g>
-            </svg>EN</button><button data-lang="pt">
+            </svg><span class="lang-code">EN</span></button><button data-lang="pt" aria-label="Português">
             <svg class="flag" viewBox="0 0 24 16" aria-hidden="true">
               <clipPath id="brDisc"><circle cx="12" cy="8" r="3.7"/></clipPath>
               <rect width="24" height="16" fill="#009c3b"/>
               <path d="M12 1.9 21.9 8 12 14.1 2.1 8z" fill="#ffdf00"/>
               <circle cx="12" cy="8" r="3.7" fill="#002776"/>
               <path d="M7.6 6.6c3.6-1 7.4.1 9.4 2.6l-.5 1.5c-1.7-2.6-5.5-3.8-9.2-2.7z" fill="#fff" clip-path="url(#brDisc)"/>
-            </svg>PT</button><button data-lang="es">
+            </svg><span class="lang-code">PT</span></button><button data-lang="es" aria-label="Español">
             <svg class="flag" viewBox="0 0 24 16" aria-hidden="true">
               <rect width="24" height="16" fill="#c60b1e"/>
               <rect y="4" width="24" height="8" fill="#ffc400"/>
-            </svg>ES</button>
+            </svg><span class="lang-code">ES</span></button>
         </div>
       </div>
     </div>
@@ -486,6 +493,7 @@ footer p{font-size:.76rem;color:rgba(255,255,255,.5);max-width:62ch;margin:18px 
       <div>
         <div class="brand">
           <img class="logo" src="assets/logo-mark.png" alt="Alliance Immigration Law">
+        <img class="wordmark" src="assets/logo-word.png" alt="">
         </div>
         <p data-i18n="foot">No attorney-client relationship is created until the parties sign a contract. Nothing on this website should be construed as legal advice.</p>
       </div>
