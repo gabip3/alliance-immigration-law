@@ -15,7 +15,7 @@ assets/renata.webp      attorney portrait
 
 ## What it does
 
-- **Trilingual.** The EN / PT / ES switch in the header retranslates the entire page from a dictionary in the script: headings, all nine practice areas, memberships, form placeholders and the select options. No page reload.
+- **Trilingual.** The EN / PT / ES switch in the header, each with a hand-drawn SVG flag (emoji flags do not render on Windows), retranslates the entire page from a dictionary in the script: headings, all nine practice areas, memberships, form placeholders and the select options. No page reload.
 - **Custom icon set.** The nine practice-area icons are hand-drawn inline SVG in a single monoline style. Every shape carries `pathLength="1"`, so on hover each icon redraws stroke by stroke at a uniform speed regardless of the real path length, and shifts from brand blue to pale blue.
 - **Portrait treatment.** The attorney photo has a plain white studio background. Instead of cutting it out, the image sits on a pale blue panel with `mix-blend-mode: multiply`, so the white dissolves and the figure integrates with no halo.
 - **Motion.** Scroll progress bar, header that solidifies past the fold, staggered reveal on scroll, a headline word that cycles, a hero gradient that follows the cursor, an infinite practice-area ticker, and a pulsing WhatsApp button fixed to the corner.
