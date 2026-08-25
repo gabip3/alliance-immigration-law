@@ -1,0 +1,11 @@
+# Claude Code local tooling / dev preview server
+.claude/
+
+# OS junk
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# temp render files
+_shot.html
+_mobile.html
